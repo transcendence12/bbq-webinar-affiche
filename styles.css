@@ -1,4 +1,7 @@
 
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -16,7 +19,7 @@ h1 {
     font-size: 2.25rem;
     color: #fff;
     font-weight: 300;
-    margin: 2em 0;
+    margin: 0;
 }
 
 /* paragraph that is immediately after h1: */
@@ -29,6 +32,7 @@ h1 + p {
 
 h2 {
     font-size: 1.3125rem;
+    margin: 0;
 }
 
 h2 + p {
@@ -36,6 +40,7 @@ h2 + p {
     font-weight: 900;
     font-size: 1rem;
     text-transform: uppercase;
+    margin: 0;
 }
 
 .top-text {
@@ -62,11 +67,85 @@ strong {
 .intro {
     background-image: url(images/bbq.jpg);
     background-color: #404040; /* if bg image doesn't work and text is white => bg-clr helps the reader to read the text. bg-color is always behind the text */
-    padding: 0 .25em 1em;
+    background-size: cover;
+    background-position: center;
+    padding: 0 .5em 2em;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    min-height: 50vh;
 }
 
 /* =====================
    Main-content section
    ===================== */
+
+   .main-content {
+       padding: 2em 1em;
+   }
+
+   /* Star selector - everything that is nested in .intro and in .main-content will have max-width 400px; margins: and will be centered without overwriting previous settings (e. g. margin: 0 auto): */
+   .intro > *,
+   .main-content > * {
+       max-width: 400px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+
+
+/* =====================
+            Form
+   ===================== */
+
+   .email-collector {
+       width: 80%;
+       max-width: 300px;
+   }
+
+   input,
+   .btn {
+       width: 100%;
+       border-radius: 5px;
+   }
+
+   input {
+       font-family: inherit;
+       text-align: inherit;
+       margin-bottom: .75em;
+       padding: .25em;
+       border: 1px solid #404040;
+   }
+
+   /* =====================
+   Media queries
+   ===================== */
+
+   @media (min-width: 500px) {
+        body {
+            font-size: 1.125rem;
+            display: flex;
+            
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2,
+        h1 + p {
+            font-size: 1.75rem;
+        }
+
+        .intro,
+        .main-content {
+            width: 50%;
+            min-height: 100vh;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+   }
