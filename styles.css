@@ -46,9 +46,12 @@ h2 + p {
 .top-text {
     font-size: .625rem;
     font-weight: 900;
+    padding-top: 2px;
+    margin: 0;
     color: #f18119;
     text-transform: uppercase;
     order: -1;
+    border-top: 5px solid #f18119;
 }
 
 .fine-print {
@@ -67,6 +70,7 @@ strong {
 .intro {
     background-image: url(images/bbq.jpg);
     background-color: #404040; /* if bg image doesn't work and text is white => bg-clr helps the reader to read the text. bg-color is always behind the text */
+    background-blend-mode: multiply; /* keeps bright px */
     background-size: cover;
     background-position: center;
     padding: 0 .5em 2em;
@@ -114,6 +118,35 @@ strong {
        margin-bottom: .75em;
        padding: .25em;
        border: 1px solid #404040;
+       transform: scale(1);
+       transition: transform 250ms;
+   }
+
+   input:focus {
+       transform: scale(1.1);
+   }
+
+   .btn {
+       display: inline-block;
+       padding: 1em 1.5em;
+       font-size: .625rem;
+       text-transform: uppercase;
+       font-weight: 900;
+       letter-spacing: 1px;
+       border: 0;
+       cursor: pointer;
+   }
+
+   .btn-primary {
+       background-image: linear-gradient(to left, #ff713b, #ffa51d);
+       color: white;
+       transform: scale(1);
+       transition: transform 250ms;
+   }
+
+   .btn-primary:hover,
+   .btn-primary:focus {
+       transform: scale(1.1);
    }
 
    /* =====================
